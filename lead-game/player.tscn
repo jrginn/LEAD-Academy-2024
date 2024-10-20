@@ -21,8 +21,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="player" type="Area2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_ltxke")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3)
