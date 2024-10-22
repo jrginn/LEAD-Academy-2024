@@ -1,40 +1,43 @@
 extends CharacterBody2D
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
-var screen_size # Size of the game window.
+var speed = 800
 
+enum States {IDLE, WALK, ATTACK, HURT, DEATH}
+var state: States = States.IDLE: set = set_state
+var is_attacking = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	screen_size = get_viewport_rect().size
+func get_input():
+	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_dir * speed
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
 	
 	$AnimatedSprite2D.play()
 	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		
-	position += velocity * delta
-	#position = position.clamp(Vector2.ZERO, screen_size)
+	if is_attacking: return
 	
-	if velocity.x != 0 or velocity.y != 0: 
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
-		# See the note below about the following boolean assignment.
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+	if Input.is_action_pressed("left_click"):
+		state = States.ATTACK
+	elif velocity.x != 0 or velocity.y != 0:
+		state = States.WALK
+	else:
+		state = States.IDLE
+
+func set_state(new_state: int):
+	state = new_state
 	
-	if velocity.length() == 0:
+	if state == States.IDLE:
 		$AnimatedSprite2D.animation = "idle"
-		
+	elif state == States.WALK:
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	elif state == States.ATTACK:
+		is_attacking = true
+		$AnimatedSprite2D.animation = "attack"
+		$AnimatedSprite2D.connect("animation_finished", func(): _on_attack_finished(), CONNECT_ONE_SHOT)
+
+func _on_attack_finished():
+	is_attacking = false
+	state = States.IDLE

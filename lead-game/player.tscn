@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dwg1hj65d1t18"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_ltxke"]
+[ext_resource type="Script" path="res://oldplayer.gd" id="1_8a226"]
 [ext_resource type="Texture2D" uid="uid://cbbehrhqxlm5w" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 1.png" id="2_7vtaw"]
 [ext_resource type="Texture2D" uid="uid://d2ukaf70q0pgw" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 2.png" id="3_b7e26"]
 [ext_resource type="Texture2D" uid="uid://korg74k7capn" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 3.png" id="4_6g2u1"]
@@ -131,7 +131,7 @@ animations = [{
 
 [node name="Wizard" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_ltxke")
+script = ExtResource("1_8a226")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
