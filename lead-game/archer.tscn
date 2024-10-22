@@ -1,6 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://7f8501rjwx5m"]
+[gd_scene load_steps=16 format=3 uid="uid://7f8501rjwx5m"]
 
 [ext_resource type="Texture2D" uid="uid://c8kth1gkxbgcs" path="res://Archer/Archer with shadows/Archer-Walk.png" id="1_7hsjq"]
+[ext_resource type="Texture2D" uid="uid://lff4hybkbo7r" path="res://Archer/Archer with shadows/Archer-Hurt.png" id="1_nc8ka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmjpi"]
+atlas = ExtResource("1_nc8ka")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy6ee"]
+atlas = ExtResource("1_nc8ka")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l6q7"]
+atlas = ExtResource("1_nc8ka")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovk06"]
+atlas = ExtResource("1_nc8ka")
+region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wulda"]
 atlas = ExtResource("1_7hsjq")
@@ -38,6 +55,23 @@ region = Rect2(700, 0, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mmjpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy6ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l6q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovk06")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wulda")
 }, {
 "duration": 1.0,
@@ -70,7 +104,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hbgk2")
-animation = &"walk"
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
