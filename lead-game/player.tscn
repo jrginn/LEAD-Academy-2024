@@ -1,35 +1,147 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwg1hj65d1t18"]
+[gd_scene load_steps=28 format=3 uid="uid://dwg1hj65d1t18"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltxke"]
-[ext_resource type="Texture2D" uid="uid://r8nvht6a62wv" path="res://Dungeon Tiles/frames/knight_m_run_anim_f0.png" id="2_x1fyr"]
-[ext_resource type="Texture2D" uid="uid://cfew6vbwjg4a6" path="res://Dungeon Tiles/frames/knight_m_run_anim_f1.png" id="3_bb1nf"]
+[ext_resource type="Texture2D" uid="uid://cbbehrhqxlm5w" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 1.png" id="2_7vtaw"]
+[ext_resource type="Texture2D" uid="uid://d2ukaf70q0pgw" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 2.png" id="3_b7e26"]
+[ext_resource type="Texture2D" uid="uid://korg74k7capn" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 3.png" id="4_6g2u1"]
+[ext_resource type="Texture2D" uid="uid://ci21be1m8vwa7" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 4.png" id="5_k3one"]
+[ext_resource type="Texture2D" uid="uid://bflcra0ipk7an" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 5.png" id="6_b41yg"]
+[ext_resource type="Texture2D" uid="uid://ct70eaf84lscu" path="res://Wizard/Wizard with shadows/Attack Stills/Wizard-Attack 6.png" id="7_yair3"]
+[ext_resource type="Texture2D" uid="uid://bc4iey1644woc" path="res://Wizard/Wizard with shadows/Death Stills/Wizard-DEATH 1.png" id="8_qh47b"]
+[ext_resource type="Texture2D" uid="uid://dpf3etc8k0i0h" path="res://Wizard/Wizard with shadows/Death Stills/Wizard-DEATH 2.png" id="9_fa5wa"]
+[ext_resource type="Texture2D" uid="uid://b1nkomfxom6mr" path="res://Wizard/Wizard with shadows/Death Stills/Wizard-DEATH 3.png" id="10_vsnw8"]
+[ext_resource type="Texture2D" uid="uid://betsvp7j6co41" path="res://Wizard/Wizard with shadows/Death Stills/Wizard-DEATH 4.png" id="11_vtcap"]
+[ext_resource type="Texture2D" uid="uid://c2kvc7o5ktwyq" path="res://Wizard/Wizard with shadows/Idle Stills/Wizard-Idle 1.png" id="12_s2u3o"]
+[ext_resource type="Texture2D" uid="uid://cucasv7rgk1vr" path="res://Wizard/Wizard with shadows/Idle Stills/Wizard-Idle 2.png" id="13_8e5t4"]
+[ext_resource type="Texture2D" uid="uid://x1k7pje2mjje" path="res://Wizard/Wizard with shadows/Idle Stills/Wizard-Idle 3.png" id="14_8ffvr"]
+[ext_resource type="Texture2D" uid="uid://5t4x5gvai064" path="res://Wizard/Wizard with shadows/Idle Stills/Wizard-Idle 4.png" id="15_iuax5"]
+[ext_resource type="Texture2D" uid="uid://b2t5m6j2tbomk" path="res://Wizard/Wizard with shadows/Idle Stills/Wizard-Idle 5.png" id="16_47xhm"]
+[ext_resource type="Texture2D" uid="uid://cjjynb0o0ucf4" path="res://Wizard/Wizard with shadows/Idle Stills/Wizard-Idle 6.png" id="17_twowt"]
+[ext_resource type="Texture2D" uid="uid://dp2y3fp88m2su" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 1.png" id="18_wa2yw"]
+[ext_resource type="Texture2D" uid="uid://bvd3wjfgp4h1k" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 2.png" id="19_34xgn"]
+[ext_resource type="Texture2D" uid="uid://cy7dqbr2t2rjy" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 3.png" id="20_ysssn"]
+[ext_resource type="Texture2D" uid="uid://b4qf3mbtfwwpc" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 4.png" id="21_s42ob"]
+[ext_resource type="Texture2D" uid="uid://diac2v2vt0xw5" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 5.png" id="22_jqjjr"]
+[ext_resource type="Texture2D" uid="uid://bvgcnj0upoxry" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 6.png" id="23_7qnqm"]
+[ext_resource type="Texture2D" uid="uid://b4a4fk180kqej" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 7.png" id="24_hyw22"]
+[ext_resource type="Texture2D" uid="uid://cna2xptidcvtc" path="res://Wizard/Wizard with shadows/Walk Stills/Wizard-Walk 8.png" id="25_aujsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ak4kc"]
-size = Vector2(15, 20)
+size = Vector2(14, 19.3333)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tr8ts"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nteks"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x1fyr")
+"texture": ExtResource("2_7vtaw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_bb1nf")
+"texture": ExtResource("3_b7e26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6g2u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k3one")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b41yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yair3")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qh47b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fa5wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vsnw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vtcap")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_s2u3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8e5t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8ffvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iuax5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_47xhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_twowt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_wa2yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_34xgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ysssn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s42ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jqjjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7qnqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hyw22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_aujsv")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 6.0
 }]
 
-[node name="player" type="Area2D"]
-scale = Vector2(3, 3)
+[node name="Wizard" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_ltxke")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 3)
+position = Vector2(-1.33333, -1)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_ak4kc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_tr8ts")
-animation = &"walk"
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_nteks")
+animation = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]

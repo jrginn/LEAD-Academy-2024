@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://datpr23k2lnu6"]
+
+[node name="Marker2D" type="Marker2D"]
+position = Vector2(4863, 3714)
