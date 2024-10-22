@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://7f8501rjwx5m"]
+
+[ext_resource type="Texture2D" uid="uid://c8kth1gkxbgcs" path="res://Archer/Archer with shadows/Archer-Walk.png" id="1_7hsjq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wulda"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v85eb"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhku2"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w54mk"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciknq"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7mi8"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n770v"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ber7t"]
+atlas = ExtResource("1_7hsjq")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbgk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wulda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v85eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhku2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w54mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciknq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7mi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n770v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ber7t")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="archer" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hbgk2")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
