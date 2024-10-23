@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://7f8501rjwx5m"]
+[gd_scene load_steps=41 format=3 uid="uid://7f8501rjwx5m"]
 
 [ext_resource type="Texture2D" uid="uid://c8kth1gkxbgcs" path="res://Archer/Archer with shadows/Archer-Walk.png" id="1_7hsjq"]
 [ext_resource type="Script" path="res://player.gd" id="1_k502u"]
 [ext_resource type="Texture2D" uid="uid://lff4hybkbo7r" path="res://Archer/Archer with shadows/Archer-Hurt.png" id="1_nc8ka"]
 [ext_resource type="Texture2D" uid="uid://ca80w6oh46wxg" path="res://Archer/Archer with shadows/Archer-Attack01.png" id="1_pxomi"]
 [ext_resource type="Texture2D" uid="uid://bygf5xb27a1ch" path="res://Archer/Archer with shadows/Archer-Death.png" id="2_5de2o"]
+[ext_resource type="PackedScene" uid="uid://ct2eplnnqas0o" path="res://arrow.tscn" id="2_ab4r4"]
 [ext_resource type="Texture2D" uid="uid://bishq7qx5q6um" path="res://Archer/Archer with shadows/Archer-Idle.png" id="4_mkovm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7f6v"]
@@ -258,12 +259,18 @@ height = 22.0
 
 [node name="archer" type="CharacterBody2D"]
 script = ExtResource("1_k502u")
+Projectile = ExtResource("2_ab4r4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hbgk2")
-animation = &"hurt"
+animation = &"attack"
+frame = 8
+frame_progress = 0.514512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_k1ymj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(7.37, 0)

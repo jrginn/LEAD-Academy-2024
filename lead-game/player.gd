@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var Projectile : PackedScene
+
 var speed = 800
 
 enum States {IDLE, WALK, ATTACK, HURT, DEATH}
@@ -20,6 +22,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("left_click"):
 		state = States.ATTACK
+		shoot()
 	elif velocity.x != 0 or velocity.y != 0:
 		state = States.WALK
 	else:
@@ -41,3 +44,8 @@ func set_state(new_state: int):
 func _on_attack_finished():
 	is_attacking = false
 	state = States.IDLE
+	
+func shoot():
+	var p = Projectile.instantiate()
+	get_tree().current_scene.add_child(p)
+	p.transform = $ShootPoint.global_transform

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn43ow2yb76oy"]
+
+[ext_resource type="Texture2D" uid="uid://bd4wv4xdpdxt1" path="res://Wizard/Magic(projectile)/Wizard-Attack02_Effect.png" id="1_v5j3d"]
+[ext_resource type="Script" path="res://projectile.gd" id="1_ydgoc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itjpv"]
+radius = 8.0
+height = 24.0
+
+[node name="fireball" type="Area2D"]
+top_level = true
+visibility_layer = 1023
+collision_mask = 257
+script = ExtResource("1_ydgoc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
+texture = ExtResource("1_v5j3d")
+region_enabled = true
+region_rect = Rect2(335, 38.75, 33, 25.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_itjpv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
