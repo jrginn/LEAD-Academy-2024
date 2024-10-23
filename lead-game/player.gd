@@ -8,6 +8,8 @@ enum States {IDLE, WALK, ATTACK, HURT, DEATH}
 var state: States = States.IDLE: set = set_state
 var is_attacking = false
 
+var is_facing_right = true
+
 func get_input():
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_dir * speed
@@ -18,6 +20,8 @@ func _physics_process(delta):
 	
 	$AnimatedSprite2D.play()
 	
+	is_facing_right = velocity.x >= 0
+	
 	if is_attacking: return # do not change animations before attack has completed
 	
 	if Input.is_action_pressed("left_click"):
@@ -27,6 +31,15 @@ func _physics_process(delta):
 		state = States.WALK
 	else:
 		state = States.IDLE
+	#look_at(get_global_mouse_position())
+	#if get_global_mouse_position().x > position.x:
+		#flip_h = false
+	#elif get_global_mouse_position().x < position.x:
+		#flip_h = true
+	#if velocity.x < 0:
+		#scale = Vector2(-1,1)
+	#elif velocity.x > 0:
+		#scale = Vector2(1,1)
 
 func set_state(new_state: int):
 	state = new_state
@@ -35,7 +48,12 @@ func set_state(new_state: int):
 		$AnimatedSprite2D.animation = "idle"
 	elif state == States.WALK:
 		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$AnimatedSprite2D.flip_h = not is_facing_right
+		if is_facing_right:
+			$ShootPoint.position.x = abs($ShootPoint.position.x)  # Ensure it's on the right
+		else:
+			$ShootPoint.position.x = -abs($ShootPoint.position.x)  # Flip to the left
+
 	elif state == States.ATTACK:
 		is_attacking = true
 		$AnimatedSprite2D.animation = "attack"
@@ -48,4 +66,9 @@ func _on_attack_finished():
 func shoot():
 	var p = Projectile.instantiate()
 	get_tree().current_scene.add_child(p)
+	#p.look_at(get_global_mouse_position())
 	p.transform = $ShootPoint.global_transform
+	if not is_facing_right:
+		p.velocity = Vector2(-p.velocity.x, p.velocity.y)
+		p.rotation = $ShootPoint.rotation + PI  # 180 degrees rotation
+	
