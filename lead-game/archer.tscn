@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://7f8501rjwx5m"]
+[gd_scene load_steps=40 format=3 uid="uid://7f8501rjwx5m"]
 
 [ext_resource type="Texture2D" uid="uid://c8kth1gkxbgcs" path="res://Archer/Archer with shadows/Archer-Walk.png" id="1_7hsjq"]
 [ext_resource type="Script" path="res://player.gd" id="1_k502u"]
@@ -252,6 +252,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1ymj"]
+radius = 9.0
+height = 22.0
+
 [node name="archer" type="CharacterBody2D"]
 script = ExtResource("1_k502u")
 
@@ -260,5 +264,6 @@ sprite_frames = SubResource("SpriteFrames_hbgk2")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k1ymj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
