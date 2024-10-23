@@ -42,7 +42,7 @@ height = 32.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvhev")
 animation = &"idle"
-frame_progress = 0.135927
+frame_progress = 0.332031
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

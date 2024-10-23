@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8dlmwtt6x8bt"]
+[gd_scene load_steps=12 format=3 uid="uid://b8dlmwtt6x8bt"]
 
+[ext_resource type="Script" path="res://mob.gd" id="1_1rxhk"]
 [ext_resource type="Texture2D" uid="uid://bihw7jrldoqw7" path="res://Dungeon Tiles/frames/pumpkin_dude_idle_anim_f3.png" id="1_dquxf"]
 [ext_resource type="Texture2D" uid="uid://cwephlhcx7tvb" path="res://Dungeon Tiles/frames/pumpkin_dude_run_anim_f0.png" id="2_hrq6q"]
 [ext_resource type="Texture2D" uid="uid://chgbh22j3xgde" path="res://Dungeon Tiles/frames/pumpkin_dude_run_anim_f1.png" id="3_bypoo"]
@@ -38,15 +39,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_skthk"]
+script/source = "extends AnimatedSprite2D
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qtfw"]
 radius = 7.0
 height = 22.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af7fn"]
+size = Vector2(175, 175)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_1rxhk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7g6tl")
 animation = &"pumpkin_idle"
+script = SubResource("GDScript_skthk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1qtfw")
+
+[node name="Detection Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Zone"]
+shape = SubResource("RectangleShape2D_af7fn")
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 0.75
+
+[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
