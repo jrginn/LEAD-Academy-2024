@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/initial_position=Vector2i(4863, 3714)
 
 [input]
@@ -55,3 +54,5 @@ left_click={
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="Player"
 2d_physics/layer_8="Props"
+2d_physics/layer_9="Obstacles"
+2d_physics/layer_10="Interactables"
