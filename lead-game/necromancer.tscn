@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://8q8fv148aked"]
+
+[ext_resource type="Texture2D" uid="uid://2rp1o0w1xkbx" path="res://Dungeon Tiles/frames/necromancer_anim_f0.png" id="1_k1qfh"]
+[ext_resource type="Texture2D" uid="uid://b1oltfktvqve6" path="res://Dungeon Tiles/frames/necromancer_anim_f1.png" id="2_v27ir"]
+[ext_resource type="Texture2D" uid="uid://bw1i0rwyeycuj" path="res://Dungeon Tiles/frames/necromancer_anim_f2.png" id="3_xbopu"]
+[ext_resource type="Texture2D" uid="uid://cedfas62n5upn" path="res://Dungeon Tiles/frames/necromancer_anim_f3.png" id="4_6yf8v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2qki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k1qfh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k1qfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v27ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xbopu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6yf8v")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8y45"]
+size = Vector2(12, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b2qki")
+animation = &"run"
+frame = 1
+frame_progress = 0.854281
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_v8y45")

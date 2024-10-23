@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpfon3ju2bca2"]
+
+[ext_resource type="Texture2D" uid="uid://lmjg118grwtj" path="res://Dungeon Tiles/frames/big_zombie_idle_anim_f0.png" id="1_twbiv"]
+[ext_resource type="Texture2D" uid="uid://w47yyy1yo5bn" path="res://Dungeon Tiles/frames/big_zombie_run_anim_f0.png" id="2_l8vyp"]
+[ext_resource type="Texture2D" uid="uid://ibwtbgurhwp6" path="res://Dungeon Tiles/frames/big_zombie_run_anim_f1.png" id="3_buwif"]
+[ext_resource type="Texture2D" uid="uid://blp5he55ngqbt" path="res://Dungeon Tiles/frames/big_zombie_run_anim_f2.png" id="4_idt01"]
+[ext_resource type="Texture2D" uid="uid://b2dr0bv0vuf3i" path="res://Dungeon Tiles/frames/big_zombie_run_anim_f3.png" id="5_o520x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2b01r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_twbiv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l8vyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_buwif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idt01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o520x")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8k13h"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2b01r")
+animation = &"run"
+frame_progress = 0.36059
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_8k13h")

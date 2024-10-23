@@ -17,7 +17,7 @@ animations = [{
 "texture": ExtResource("1_dquxf")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"pumpkin_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -34,7 +34,7 @@ animations = [{
 "texture": ExtResource("5_j4hmj")
 }],
 "loop": true,
-"name": &"run",
+"name": &"pumpkin_run",
 "speed": 5.0
 }]
 
@@ -46,8 +46,7 @@ height = 22.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7g6tl")
-animation = &"run"
-frame_progress = 0.387022
+animation = &"pumpkin_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1qtfw")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu15d0ltjooxd"]
+
+[ext_resource type="Texture2D" uid="uid://bqoqps5005moq" path="res://Dungeon Tiles/frames/big_demon_idle_anim_f3.png" id="1_8b5v5"]
+[ext_resource type="Texture2D" uid="uid://b0a5pmpef163t" path="res://Dungeon Tiles/frames/big_demon_run_anim_f0.png" id="2_h1q47"]
+[ext_resource type="Texture2D" uid="uid://dr2aw0tyk0pa6" path="res://Dungeon Tiles/frames/big_demon_run_anim_f1.png" id="3_y3uni"]
+[ext_resource type="Texture2D" uid="uid://bssjsvhpvg2o3" path="res://Dungeon Tiles/frames/big_demon_run_anim_f2.png" id="4_gn7rm"]
+[ext_resource type="Texture2D" uid="uid://dwa1h53awfva8" path="res://Dungeon Tiles/frames/big_demon_run_anim_f3.png" id="5_m33kh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3the"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8b5v5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h1q47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y3uni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gn7rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m33kh")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w07hi"]
+radius = 11.0
+height = 34.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w3the")
+animation = &"idle"
+frame_progress = 0.0618639
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_w07hi")

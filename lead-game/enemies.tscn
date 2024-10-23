@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhev6ab0senxj"]
+
+[ext_resource type="Texture2D" uid="uid://bihw7jrldoqw7" path="res://Dungeon Tiles/frames/pumpkin_dude_idle_anim_f3.png" id="1_camhb"]
+[ext_resource type="Texture2D" uid="uid://cwephlhcx7tvb" path="res://Dungeon Tiles/frames/pumpkin_dude_run_anim_f0.png" id="2_um7rj"]
+[ext_resource type="Texture2D" uid="uid://chgbh22j3xgde" path="res://Dungeon Tiles/frames/pumpkin_dude_run_anim_f1.png" id="3_ak2je"]
+[ext_resource type="Texture2D" uid="uid://c1x5sj62xvgvs" path="res://Dungeon Tiles/frames/pumpkin_dude_run_anim_f2.png" id="4_b1t0c"]
+[ext_resource type="Texture2D" uid="uid://dlo0304i27ixo" path="res://Dungeon Tiles/frames/pumpkin_dude_run_anim_f3.png" id="5_i7a7x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq16o"]
+atlas = ExtResource("2_um7rj")
+region = Rect2(0, 0, 16, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7g6tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_camhb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq16o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ak2je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b1t0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i7a7x")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qtfw"]
+radius = 7.0
+height = 22.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7g6tl")
+animation = &"run"
+frame_progress = 0.387022
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1qtfw")
