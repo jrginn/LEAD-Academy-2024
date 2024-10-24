@@ -50,7 +50,7 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af7fn"]
 size = Vector2(250, 250)
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["mobs"]]
+[node name="Pumpkin" type="CharacterBody2D" groups=["mobs"]]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_1rxhk")
 

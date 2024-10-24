@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy53b535qlph7"]
+[gd_scene load_steps=9 format=3 uid="uid://dy53b535qlph7"]
 
 [ext_resource type="Texture2D" uid="uid://d0jcck68umq7i" path="res://Dungeon Tiles/frames/doc_idle_anim_f3.png" id="1_37jea"]
 [ext_resource type="Texture2D" uid="uid://dtmhxmh8akpvn" path="res://Dungeon Tiles/frames/doc_run_anim_f0.png" id="2_cinvd"]
@@ -38,7 +38,10 @@ animations = [{
 radius = 7.0
 height = 20.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiyf7"]
+size = Vector2(250, 250)
+
+[node name="Doctor" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yqhn8")
@@ -47,3 +50,14 @@ animation = &"run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_nhw5l")
+
+[node name="Detection Zone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Zone"]
+shape = SubResource("RectangleShape2D_aiyf7")
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="ShootTimer" type="Timer" parent="."]

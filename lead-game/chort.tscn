@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqgn4f4qhyjis"]
+[gd_scene load_steps=10 format=3 uid="uid://cqgn4f4qhyjis"]
 
 [ext_resource type="Texture2D" uid="uid://c4aa3xiy6hpix" path="res://Dungeon Tiles/frames/chort_idle_anim_f1.png" id="1_0orsi"]
+[ext_resource type="Script" path="res://mob.gd" id="1_oojsd"]
 [ext_resource type="Texture2D" uid="uid://48eoepibhfw8" path="res://Dungeon Tiles/frames/chort_run_anim_f0.png" id="2_f1bch"]
 [ext_resource type="Texture2D" uid="uid://tyljyxaimejk" path="res://Dungeon Tiles/frames/chort_run_anim_f1.png" id="3_yr2pj"]
 [ext_resource type="Texture2D" uid="uid://b3mpwohklit5n" path="res://Dungeon Tiles/frames/chort_run_anim_f2.png" id="4_x5oge"]
@@ -38,7 +39,11 @@ animations = [{
 radius = 6.0
 height = 22.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncra8"]
+size = Vector2(250, 250)
+
+[node name="Chort" type="CharacterBody2D"]
+script = ExtResource("1_oojsd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xqcb7")
@@ -48,3 +53,14 @@ frame_progress = 0.651384
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_lifk4")
+
+[node name="Detection Zone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Zone"]
+shape = SubResource("RectangleShape2D_ncra8")
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="ShootTimer" type="Timer" parent="."]
