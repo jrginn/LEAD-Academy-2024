@@ -10,7 +10,7 @@ var is_attacking = false
 
 var is_facing_right = true
 
-var should_switch = true
+var health = 5
 
 func get_input():
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -63,4 +63,7 @@ func shoot():
 	get_tree().current_scene.add_child(p)
 	p.transform = $ShootPoint.global_transform
 	p.scale = Vector2(4,4)
+	
+func hurt():
+	health -= 1
 	
