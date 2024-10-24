@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://0vbbejr2d2gv"]
+[gd_scene load_steps=22 format=4 uid="uid://0vbbejr2d2gv"]
 
 [ext_resource type="Texture2D" uid="uid://j0aedgyistjh" path="res://Dungeon Tiles/atlas_floor-16x16.png" id="1_8yg3u"]
 [ext_resource type="Texture2D" uid="uid://br34sp2maksdr" path="res://Dungeon Tiles/atlas_walls_low-16x16.png" id="2_m25g7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bah123a6ign4d" path="res://Dungeon Tiles/0x72_DungeonTilesetII_v1.7.png" id="4_68ure"]
 [ext_resource type="PackedScene" uid="uid://djbru0vbiiwxn" path="res://wizard.tscn" id="5_ru71o"]
 [ext_resource type="PackedScene" uid="uid://b8dlmwtt6x8bt" path="res://pumpkin.tscn" id="6_1q37q"]
+[ext_resource type="Script" path="res://spawn_point.gd" id="7_6dcmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3i7as"]
 texture = ExtResource("1_8yg3u")
@@ -2022,4 +2023,8 @@ tile_map_data = PackedByteArray("AAD///v/AAAFAA8AAAAAAPv/AAAGAA8AAAD///r/AQAVAAU
 tile_set = SubResource("TileSet_ka8ao")
 
 [node name="Pumpkin" parent="." instance=ExtResource("6_1q37q")]
-position = Vector2(-0.25, -206.875)
+position = Vector2(74.5, -195.875)
+
+[node name="Main Enemy Spawn 1" type="Marker2D" parent="."]
+position = Vector2(-64.5, -248.5)
+script = ExtResource("7_6dcmo")
