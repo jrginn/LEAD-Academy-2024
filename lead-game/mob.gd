@@ -17,6 +17,10 @@ func _physics_process(_delta):
 	if playerDetected:
 		velocity.x = x_velocity_sign * speed
 		velocity.y = y_velocity_sign * speed
+		
+		# if player is to left of mob, face left
+		$AnimatedSprite2D.flip_h = (playerBody.global_position.x - global_position.x) < 0
+		
 		move_and_slide()
 
 func _on_movement_timer_timeout() -> void:
