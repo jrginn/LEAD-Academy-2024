@@ -72,6 +72,9 @@ shape = SubResource("RectangleShape2D_af7fn")
 [node name="MovementTimer" type="Timer" parent="."]
 wait_time = 0.75
 
+[node name="ShootTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Detection Zone" to="." method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="Detection Zone" to="." method="_on_detection_zone_body_exited"]
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

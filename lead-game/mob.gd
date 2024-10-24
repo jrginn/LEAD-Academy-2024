@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var Projectile : PackedScene
+
 var speed = 200
 
 var x_velocity_sign = 1
@@ -48,3 +50,14 @@ func _on_detection_zone_body_exited(body: Node2D) -> void:
 		playerBody = null
 		playerDetected = false
 		$AnimatedSprite2D.animation = "idle"
+
+
+func _on_shoot_timer_timeout() -> void:
+	shoot() # Replace with function body.
+	
+func shoot():
+	var p = Projectile.instantiate()
+	get_tree().current_scene.add_child(p)
+	p.global_position = global_position
+	if playerDetected:
+		look_at(playerBody.global_position)
