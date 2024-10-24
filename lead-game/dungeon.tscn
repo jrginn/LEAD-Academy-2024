@@ -1,10 +1,13 @@
-[gd_scene load_steps=22 format=4 uid="uid://0vbbejr2d2gv"]
+[gd_scene load_steps=25 format=4 uid="uid://0vbbejr2d2gv"]
 
 [ext_resource type="Texture2D" uid="uid://j0aedgyistjh" path="res://Dungeon Tiles/atlas_floor-16x16.png" id="1_8yg3u"]
 [ext_resource type="Texture2D" uid="uid://br34sp2maksdr" path="res://Dungeon Tiles/atlas_walls_low-16x16.png" id="2_m25g7"]
+[ext_resource type="PackedScene" uid="uid://8q8fv148aked" path="res://necromancer.tscn" id="3_7xe0w"]
 [ext_resource type="Texture2D" uid="uid://ckwobt6dma7dr" path="res://Dungeon Tiles/atlas_walls_high-16x32.png" id="3_u3d0a"]
 [ext_resource type="Texture2D" uid="uid://bah123a6ign4d" path="res://Dungeon Tiles/0x72_DungeonTilesetII_v1.7.png" id="4_68ure"]
+[ext_resource type="PackedScene" uid="uid://cqgn4f4qhyjis" path="res://chort.tscn" id="4_l1h7r"]
 [ext_resource type="PackedScene" uid="uid://djbru0vbiiwxn" path="res://wizard.tscn" id="5_ru71o"]
+[ext_resource type="PackedScene" uid="uid://dy53b535qlph7" path="res://doctor.tscn" id="5_uig50"]
 [ext_resource type="PackedScene" uid="uid://b8dlmwtt6x8bt" path="res://pumpkin.tscn" id="6_1q37q"]
 [ext_resource type="Script" path="res://spawn_point.gd" id="7_6dcmo"]
 
@@ -2028,3 +2031,7 @@ position = Vector2(74.5, -195.875)
 [node name="Main Enemy Spawn 1" type="Marker2D" parent="."]
 position = Vector2(-64.5, -248.5)
 script = ExtResource("7_6dcmo")
+pumpkin_scene = ExtResource("6_1q37q")
+necromancer_scene = ExtResource("3_7xe0w")
+chort_scene = ExtResource("4_l1h7r")
+doctor_scene = ExtResource("5_uig50")

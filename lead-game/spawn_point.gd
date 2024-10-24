@@ -14,3 +14,5 @@ var _character_scene_list = [
 
 func _process(delta):
 	var mob = _character_scene_list[randi() % 4].instantiate()
+	
+	var mob_spawn_location = location
