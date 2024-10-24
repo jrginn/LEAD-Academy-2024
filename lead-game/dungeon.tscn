@@ -2011,7 +2011,6 @@ collision_visibility_mode = 1
 
 [node name="Wizard" parent="." instance=ExtResource("5_ru71o")]
 collision_mask = 257
-Projectile = null
 
 [node name="Obstacles" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAkAO3/AAAFAAUAAAAkAO7/AAAFAAYAAAAkAO//AAAFAAcAAAAlAOX/AAABAAIAAAAnAOX/AAASABkAAAAoAOf/AAAFAAUAAAAoAOj/AAAFAAYAAAAoAOn/AAAFAAcAAAD+////AAASABkAAAD+/wAAAAASABoAAADN//f/AAAFAAUAAADN//j/AAAFAAYAAADN//n/AAAFAAcAAADR//3/AAAFAAUAAADR//7/AAAFAAYAAADR////AAAFAAcAAAA=")

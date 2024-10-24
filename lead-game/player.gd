@@ -84,7 +84,4 @@ func shoot():
 	get_tree().current_scene.add_child(p)
 	#p.look_at(get_global_mouse_position())
 	p.transform = $ShootPoint.global_transform
-	if not is_facing_right:
-		p.velocity = Vector2(-p.velocity.x, p.velocity.y)
-		p.rotation = $ShootPoint.rotation + PI  # 180 degrees rotation
 	
